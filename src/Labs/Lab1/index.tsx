@@ -199,8 +199,6 @@ function Lab1() {
             id="wd-text-fields-last-name"
           />
           <h5>Text boxes</h5>
-          <label>Biography:</label>
-          <br />
           <h4>Other HTML field types</h4>
           <label htmlFor="wd-text-fields-email"> Email: </label>
           <input
@@ -231,6 +229,8 @@ function Lab1() {
           <br />
         </form>
       </div>
+      <label>Biography:</label>
+      <br />
       <textarea id="wd-textarea" cols={30} rows={10}>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
@@ -305,16 +305,16 @@ function Lab1() {
         <option value="FANTASY"> Fantasy </option>
       </select>
       <h4>Anchor tag</h4>
-      Please
+      Please{" "}
       <a href="https://www.lipsum.com" id="wd-lipsum">
         click here
-      </a>
+      </a>{" "}
       to get dummy text
       <br />
-      Please
-      <a href="https://www.lipsum.com" id="wd-github">
+      Please{" "}
+      <a href="https://github.com/fleece30/kambaz-react-web-app" id="wd-github">
         click here
-      </a>
+      </a>{" "}
       to go to my github repo
       <br />
     </div>
