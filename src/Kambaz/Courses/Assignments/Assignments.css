@@ -1,0 +1,13 @@
+.wd-flex-col-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.wd-flex-row-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.text-align-end {
+  text-align: end;
+}

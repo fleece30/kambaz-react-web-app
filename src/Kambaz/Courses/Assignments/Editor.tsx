@@ -1,130 +1,144 @@
+import {
+  Button,
+  Col,
+  Form,
+  FormCheck,
+  FormControl,
+  FormGroup,
+  FormLabel,
+  FormSelect,
+  Row,
+} from "react-bootstrap";
+
 export default function AssignmentEditor() {
   return (
-    <div id="wd-assignments-editor">
-      <label htmlFor="wd-name">Assignment Name</label>
-      <br />
-      <br />
-      <input id="wd-name" value="A1 - ENV + HTML" />
-      <br />
-      <br />
-      <textarea id="wd-description" cols={50} rows={10}>
-        The assignment is available online Submit a link to the landing page of
-        your Web Application running on Netlify. The landing page should include
-        the following: Your full name and section links to each of the lab
-        assignments, Link to the Kanbas application, Links to all relevant
-        source code repositories. The kanbas application should include a link
-        to navigate back to the landing page.
-      </textarea>
-      <br />
-      <table>
-        <tr>
-          <td align="right" valign="top">
-            <label htmlFor="wd-points">Points</label>
-          </td>
-          <td>
-            <input id="wd-points" value={100} />
-          </td>
-        </tr>
-        <tr>
-          <td align="right" valign="top">
-            <label htmlFor="wd-group">Assignment Group</label>
-          </td>
-          <td>
-            <select id="wd-group">
-              <option value="ASSIGNMENTS">ASSIGNMENTS</option>
-              <option value="QUIZZES">QUIZZES</option>
-              <option value="EXAM">EXAM</option>
-              <option value="PROJECT">PROJECT</option>
-            </select>
-          </td>
-        </tr>
-        <tr>
-          <td align="right" valign="top">
-            <label htmlFor="wd-submission-type">Submission Type</label>
-          </td>
-          <td>
-            <select id="wd-submission-type">
-              <option value="Online">Online</option>
-              <option value="Offline">Offline</option>
-            </select>
-          </td>
-        </tr>
-        <tr>
-          <td align="right" valign="top"></td>
-          <td>
-            Online Entry Options
-            <br />
-            <input type="checkbox" name="text-entry" id="wd-text-entry" />
-            <label htmlFor="wd-text-entry">Text Entry</label>
-            <br />
-            <input type="checkbox" name="website-url" id="wd-website-url" />
-            <label htmlFor="wd-website-url">Website URL</label>
-            <br />
-            <input
-              type="checkbox"
-              name="media-recordings"
-              id="wd-media-recordings"
-            />
-            <label htmlFor="wd-media-recordings">Media Recordings</label>
-            <br />
-            <input
-              type="checkbox"
-              name="student-annotation"
-              id="wd-student-annotation"
-            />
-            <label htmlFor="wd-student-annotation">Student Annotation</label>
-            <br />
-            <input type="checkbox" name="file-upload" id="wd-file-upload" />
-            <label htmlFor="wd-file-upload">File Uploads</label>
-          </td>
-        </tr>
-        <tr>
-          <td align="right" valign="top">
-            <label htmlFor="wd-assign-to">Assign</label>
-          </td>
-          <td>
-            <label htmlFor="wd-assign-to">Assign to</label>
-            <br />
-            <input id="wd-assign-to" value={"Everyone"} />
-          </td>
-        </tr>
-        <tr>
-          <td align="right" valign="top">
-            <label htmlFor="wd-due-date"></label>
-          </td>
-          <td>
-            <label htmlFor="wd-due-date">Due</label>
-            <br />
-            <input
-              id="wd-due-date"
-              type="date"
-              value={new Date().toISOString()}
-            />
-          </td>
-        </tr>
-        <tr>
-          <td align="right" valign="top">
-            <label htmlFor="wd-available-from"></label>
-          </td>
-          <td>
-            <label htmlFor="wd-available-from">Available from</label>
-            <br />
-            <input id="wd-available-from" type="date" />
-          </td>
-          <td align="right" valign="top">
-            <label htmlFor="wd-available-until"></label>
-          </td>
-          <td>
-            <label htmlFor="wd-available-until">Until</label>
-            <br />
-            <input id="wd-available-until" type="date" />
-          </td>
-        </tr>
-      </table>
-      <hr />
-      <div align="right">
-        <button>Cancel</button> <button>Save</button>
-      </div>
+    <div id="wd-assignments-editor" className="">
+      <Form.Group className="mb-3" controlId="name1">
+        <Form.Label column sm={2}>
+          Assignment Name
+        </Form.Label>
+        <Col sm={10}>
+          <Form.Control type="text" placeholder="Assignment name" />
+        </Col>
+      </Form.Group>
+      <Form.Group as={Row} className="mb-3" controlId="textarea2">
+        <Col sm={10}>
+          <Form.Control
+            as="textarea"
+            style={{ height: "200px" }}
+            defaultValue={`The assignment is available online.
+Submit a link to the landing page of your Web Application running on Netlify.
+The landing page should include the following:
+- Your full name and section
+- Links to each of the lab assignments
+- Link to the Kanbas application
+- Links to all relevant source code repositories
+
+The Kanbas application should include a link to navigate back to the landing page.`}
+          />
+        </Col>
+      </Form.Group>
+      <Form.Group as={Row} className="mb-3" controlId="points">
+        <Form.Label column sm={2} className="text-align-end">
+          Points
+        </Form.Label>
+        <Col sm={8}>
+          <Form.Control type="text" placeholder="Points" value={100} />
+        </Col>
+      </Form.Group>
+      <Form.Group as={Row} className="mb-3" controlId="assignmentGroup">
+        <Form.Label column sm={2} className="text-align-end">
+          Assignment Group
+        </Form.Label>
+        <Col sm={8}>
+          <FormSelect>
+            <option selected value="ASSIGNMENTS">
+              ASSIGNMENTS
+            </option>
+            <option value="QUIZZES">QUIZZES</option>
+            <option value="EXAM">EXAM</option>
+            <option value="PROJECT">PROJECT</option>
+          </FormSelect>
+        </Col>
+      </Form.Group>
+      <Form.Group as={Row} className="mb-3" controlId="submissionType">
+        <Form.Label column sm={2} className="text-align-end">
+          Submission Type
+        </Form.Label>
+        <Col sm={8} className="border border-secondary p-3 rounded">
+          <FormSelect className="mb-1">
+            <option value="Online">Online</option>
+            <option value="Offline">Offline</option>
+          </FormSelect>
+          <b className="mb-1">Online Entry Options</b>
+          <Form.Check type="checkbox" id="text-entry" label="Text Entry" />
+          <Form.Check type="checkbox" id="website-url" label="Website URL" />
+          <Form.Check
+            type="checkbox"
+            id="media-recordings"
+            label="Media Recordings"
+          />
+          <Form.Check
+            type="checkbox"
+            id="student-annotation"
+            label="Student Annotation"
+          />
+          <Form.Check type="checkbox" id="file-uploads" label="File Uploads" />
+        </Col>
+      </Form.Group>
+      <Form.Group as={Row} className="mb-3" controlId="assign">
+        <Form.Label column sm={2} className="text-align-end">
+          Assign
+        </Form.Label>
+        <Col sm={8} className="border border-secondary p-3 rounded">
+          <b className="mb-1">Assign to</b>
+          <Form.Control type="text" placeholder="Assign to" value="Everyone" />
+          <b className="pb-3">Due</b>
+          <Form.Control
+            type="datetime"
+            placeholder="Assignment name"
+            value={new Date("2025-11-23T23:59:00").toUTCString()}
+          />
+          <div className="d-flex gap-2">
+            <div className="flex-grow-1">
+              <b>Available from</b>
+              <Form.Control
+                type="datetime"
+                placeholder="Assignment name"
+                value={new Date("2025-11-30T23:59:00").toUTCString()}
+              />
+            </div>
+            <div className="flex-grow-1">
+              <b>Until</b>
+              <Form.Control
+                type="datetime"
+                placeholder="Assignment name"
+                value={new Date("2025-11-23T23:59:00").toUTCString()}
+              />
+            </div>
+          </div>
+        </Col>
+      </Form.Group>
+
+      <Form.Group as={Row} className="mb-3" controlId="buttons">
+        <Col sm={10}>
+          <hr />
+          <Button
+            variant="danger"
+            className="me-1 float-end"
+            id="wd-add-module-btn"
+          >
+            Save
+          </Button>
+          <Button
+            variant="secondary"
+            className="me-1 float-end"
+            id="wd-add-module-btn"
+          >
+            Cancel
+          </Button>
+        </Col>
+      </Form.Group>
     </div>
   );
 }
