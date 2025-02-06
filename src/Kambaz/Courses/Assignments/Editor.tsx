@@ -105,7 +105,7 @@ The Kanbas application should include a link to navigate back to the landing pag
               <Form.Control
                 type="datetime"
                 placeholder="Assignment name"
-                value={new Date("2025-11-30T23:59:00").toUTCString()}
+                value={new Date("2025-11-17T23:59:00").toUTCString()}
               />
             </div>
             <div className="flex-grow-1">
